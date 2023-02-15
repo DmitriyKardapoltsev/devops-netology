@@ -20,8 +20,8 @@
 >> 56cd7859e0 (commit 56cd7859e05c36c06b56d013b55a252d0bb7e158)  
 >> 9ea88f22fc (commit 9ea88f22fc6269854151c571162c5bcf958bee2b)
 ### 4.Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами **v0.12.23 и v0.12.24**
-> git log v0.12.23..v0.12.24 --oneline  
-33ff1c03bb (tag: v0.12.24) v0.12.24  
+> git log v0.12.23..v0.12.24 --oneline   
+>> 33ff1c03bb (tag: v0.12.24) v0.12.24  
 b14b74c493 [Website] vmc provider links  
 3f235065b9 Update CHANGELOG.mx  
 6ae64e247b registry: Fix panic when server is unreachable  
@@ -50,6 +50,6 @@ dd01a35078 Update CHANGELOG.md
 
 ### 7. Кто автор функции **synchronizedWriters**
 > git log -S "synchronizedWriters"  
-commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5  
+>> commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5  
 Author: Martin Atkins <mart@degeneration.co.uk>  
 Date:   Wed May 3 16:25:41 2017 -0700
