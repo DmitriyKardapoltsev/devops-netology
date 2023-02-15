@@ -36,20 +36,21 @@ dd01a35078 Update CHANGELOG.md
 > git log -S "func providerSource"
 >>commit 8c928e83589d90a031f811fae52a81be7153e82f
 >>>Author: Martin Atkins <mart@degeneration.co.uk>  
->>>Date:   Thu Apr 2 18:04:39 2020 -0700
+Date:   Thu Apr 2 18:04:39 2020 -0700
 
 ### 6. Найдите все коммиты в которых была изменена функция **globalPluginDirs**
 > git grep -p "globalPluginDirs("  
 > git log -L :globalPluginDirs:plugins.go
 >>commit 78b12205587fe839f10d946ea3fdc06719decb05  
 >>>Author: Pam Selle <204372+pselle@users.noreply.github.com>  
->>>Date:   Mon Jan 13 16:50:05 2020 -0500  
+   Date:   Mon Jan 13 16:50:05 2020 -0500  
+>
 >>commit 52dbf94834cb970b510f2fba853a5b49ad9b1a46  
 >>>Author: James Bardin <j.bardin@gmail.com>  
->>>Date:   Wed Aug 9 17:46:49 2017 -0400
+   Date:   Wed Aug 9 17:46:49 2017 -0400
 
 ### 7. Кто автор функции **synchronizedWriters**
 > git log -S "synchronizedWriters"  
 >> commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5  
-Author: Martin Atkins <mart@degeneration.co.uk>  
+>>> Author: Martin Atkins <mart@degeneration.co.uk>  
 Date:   Wed May 3 16:25:41 2017 -0700
