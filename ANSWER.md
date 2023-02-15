@@ -17,8 +17,8 @@
 > git show "b8d720"
 >> commit b8d720f8340221f2146e4e4870bf2ee0bc48f2d5  
 >>> Merge:  
-- 56cd7859e0 (commit 56cd7859e05c36c06b56d013b55a252d0bb7e158)  
-- 9ea88f22fc (commit 9ea88f22fc6269854151c571162c5bcf958bee2b)
+>>> - 56cd7859e0 (commit 56cd7859e05c36c06b56d013b55a252d0bb7e158)  
+>>> - 9ea88f22fc (commit 9ea88f22fc6269854151c571162c5bcf958bee2b)
 ### 4.Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами **v0.12.23 и v0.12.24**
 > git log v0.12.23..v0.12.24 --oneline   
 >
