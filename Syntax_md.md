@@ -60,9 +60,8 @@
 [Github Kardapoltsev][1] \
 [H1 Kardapoltsev][code]
 
-
-
-
 [1]: https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md
 [code]:https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md 
+
+![Картинка ссылка из интернета](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Текст картинки")
 
