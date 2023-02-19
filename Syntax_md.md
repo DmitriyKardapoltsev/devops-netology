@@ -29,7 +29,8 @@
 1. Список
 2. Список
 3. Список
-<br>
+
+
 5.     Список
 6. Список
     - Список
@@ -38,5 +39,15 @@
         - Список
         -    Список
 <hr>
+
 <https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md>
+
 <hr>
+
+< https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md >
+
+(https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md)
+
+[Github Kardapoltsev](https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md)
+
+[Github Kardapoltsev](https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md "Github")
