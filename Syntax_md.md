@@ -68,3 +68,9 @@
 ![Sun][2]
 
 [2]:https://catherineasquithgallery.com/uploads/posts/2021-02/1614546076_26-p-solntse-na-belom-fone-26.png "Солнце"
+
+
+|Столбец 1|Столбец 2|Столбец 3|
+|:-:|:-|-:|
+|Равнение по центру|Слева|Справа|
+|text|23|YH-23|
