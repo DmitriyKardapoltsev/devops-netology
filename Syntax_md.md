@@ -55,14 +55,15 @@
 Всплыващее окно -
 [Github Kardapoltsev](https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md "Github")
 
-Упрощает восприятие кода, ссылки как в книге, можно несколько раз обращаться к одной ссылке\
+Упрощает восприятие кода, ссылки как в книге, можно несколько раз обращаться к одной ссылке
+
 [Github Kardapoltsev][1]
 
 [H1 Kardapoltsev][code]
 
 
 
-***
+
 [1]: https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md \
 [code]:  https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md 
 
