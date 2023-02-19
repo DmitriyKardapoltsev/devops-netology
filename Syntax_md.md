@@ -57,7 +57,7 @@
 
 Упрощает восприятие кода, ссылки как в книге, можно несколько раз обращаться к одной ссылке
 
-[Github Kardapoltsev][1]
+[Github Kardapoltsev][1] \
 [H1 Kardapoltsev][code]
 
 
