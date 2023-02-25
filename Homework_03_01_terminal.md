@@ -22,10 +22,6 @@
 ![image](https://user-images.githubusercontent.com/123832086/221348571-a98b5674-1104-4e66-be0c-ad09791f119d.png)
 ![image](https://user-images.githubusercontent.com/123832086/221348723-59983584-29a5-4468-bd3a-b048fa61065a.png)
 
-
-
-
-
 3. В вашем основном окружении подготовьте удобный для дальнейшей работы терминал. Можно предложить:
 
 	* iTerm2 в Mac OS X
@@ -68,6 +64,7 @@
 ![VargantFile](https://user-images.githubusercontent.com/123832086/221364803-603e599f-6047-4424-bf23-921f3c01bb81.png "VargantFile")
 
 	* Выполнение в этой директории `vagrant up` установит провайдер VirtualBox для Vagrant, скачает необходимый образ и запустит виртуальную машину.
+
 ![Login VargantCloud](https://user-images.githubusercontent.com/123832086/221364769-e292ed73-60fb-48a4-8aa1-8c6dcd1daaf1.png "Vargant Cloud")
 
 ![Error404](https://user-images.githubusercontent.com/123832086/221364924-9192f3a7-3e77-4b01-810e-0f2343f0334b.png "Error404")
