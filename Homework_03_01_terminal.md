@@ -20,6 +20,8 @@
 >![image](https://user-images.githubusercontent.com/123832086/221344520-709cc749-bba8-4733-8b3e-11c9c8ef8ae7.png "Установка на Windows WSL")
 >![image](https://user-images.githubusercontent.com/123832086/221347076-21e1e858-7123-4464-b234-d8fe14d13fc3.png "Ubunta reg")
 ![image](https://user-images.githubusercontent.com/123832086/221348571-a98b5674-1104-4e66-be0c-ad09791f119d.png)
+![image](https://user-images.githubusercontent.com/123832086/221348723-59983584-29a5-4468-bd3a-b048fa61065a.png)
+
 
 
 
