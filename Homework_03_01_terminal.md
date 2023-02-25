@@ -11,6 +11,7 @@
 ### Инструкция к заданию
 
 1. Установите средство виртуализации [Oracle VirtualBox](https://www.virtualbox.org/).
+
 ![image](https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png "VirtualBox")
 
 2. Установите средство автоматизации [Hashicorp Vagrant](https://hashicorp-releases.yandexcloud.net/vagrant/).
@@ -26,6 +27,10 @@
 	* MobaXterm может конфликтовать с Vagrant в Windows,
 	* Vagrant плохо работает с директориями с кириллицей (может быть вашей домашней директорией), тогда можно либо изменить [VAGRANT_HOME](https://www.vagrantup.com/docs/other/environmental-variables#vagrant_home), либо создать в системе профиль пользователя с английским именем,
 	* VirtualBox конфликтует с Windows Hyper-V и его необходимо [отключить](https://www.vagrantup.com/docs/installation#windows-virtualbox-and-hyper-v),
+	
+	![image](https://user-images.githubusercontent.com/123832086/221343246-dc7d8486-1fab-4206-8a72-81e613669a29.png "Отключение Hyper-V")
+
+	
 	* [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/wsl2-faq#does-wsl-2-use-hyper-v-will-it-be-available-on-windows-10-home) использует Hyper-V, поэтому с ним VirtualBox также несовместим,
 	* аппаратная виртуализация (Intel VT-x, AMD-V) должна быть активна в BIOS,
 	* в Linux при установке [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads) может дополнительно потребоваться пакет `linux-headers-generic` (debian-based) / `kernel-devel` (rhel-based).
