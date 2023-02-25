@@ -15,6 +15,12 @@
 ![image](https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png "VirtualBox")
 
 2. Установите средство автоматизации [Hashicorp Vagrant](https://hashicorp-releases.yandexcloud.net/vagrant/).
+>\> wsl --install
+>![image](https://user-images.githubusercontent.com/123832086/221344397-708997b8-9ddd-4092-abf7-09e0e4a65816.png)
+>![image](https://user-images.githubusercontent.com/123832086/221344520-709cc749-bba8-4733-8b3e-11c9c8ef8ae7.png "Установка на Windows WSL")
+
+
+
 3. В вашем основном окружении подготовьте удобный для дальнейшей работы терминал. Можно предложить:
 
 	* iTerm2 в Mac OS X
