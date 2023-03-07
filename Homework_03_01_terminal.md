@@ -11,15 +11,17 @@
 ### Инструкция к заданию
 
 1. Установите средство виртуализации [Oracle VirtualBox](https://www.virtualbox.org/).
-
-![image](https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png "VirtualBox")
-
-<p align="right">
- <img src="https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png" width=40% height=40%>
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png" width=50% height=50%>
 </p>
 
 2. Установите средство автоматизации [Hashicorp Vagrant](https://hashicorp-releases.yandexcloud.net/vagrant/).
 >\> wsl --install
+|<img src="https://user-images.githubusercontent.com/123832086/221344397-708997b8-9ddd-4092-abf7-09e0e4a65816.png" width=50% height=50%>|<img src="https://user-images.githubusercontent.com/123832086/221344520-709cc749-bba8-4733-8b3e-11c9c8ef8ae7.png" width=50% height=50%>|
+|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/123832086/221347076-21e1e858-7123-4464-b234-d8fe14d13fc3.png" width=50% height=50%>|<img src="https://user-images.githubusercontent.com/123832086/221348571-a98b5674-1104-4e66-be0c-ad09791f119d.png>|
+|:-:|:-:|
+	
 >![image](https://user-images.githubusercontent.com/123832086/221344397-708997b8-9ddd-4092-abf7-09e0e4a65816.png)
 >![image](https://user-images.githubusercontent.com/123832086/221344520-709cc749-bba8-4733-8b3e-11c9c8ef8ae7.png "Установка на Windows WSL")
 >![image](https://user-images.githubusercontent.com/123832086/221347076-21e1e858-7123-4464-b234-d8fe14d13fc3.png "Ubunta reg")
