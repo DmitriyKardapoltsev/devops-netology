@@ -66,13 +66,13 @@
 
 ![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Картинка ссылка из интернета")
 
-<p align="center">
+<p align="right">
  <img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width=50% height=50%>
 </p>
+выравнивание center left right
 
-<img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width="50" height="80">
+<img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width="100" height="280">
 
-![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Картинка ссылка из интернета"){:height=50% width=50%}.
 
 ![Sun][2]
 
