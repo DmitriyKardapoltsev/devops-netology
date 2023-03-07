@@ -63,7 +63,7 @@
 [1]: https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md
 [code]:https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md 
 
-![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Картинка ссылка из интернета")
+![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg =100х20 "Картинка ссылка из интернета")
 
 ![Sun][2]
 
