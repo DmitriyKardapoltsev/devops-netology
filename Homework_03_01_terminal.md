@@ -70,8 +70,11 @@
 ![Vagrant_ready](https://user-images.githubusercontent.com/123832086/223360057-51e51084-800c-4556-b6fc-655e5e9aff41.png "Machine_ready")
 
 	* `vagrant suspend` выключит виртуальную машину с сохранением ее состояния (т.е., при следующем `vagrant up` будут запущены все процессы внутри, которые работали на момент вызова suspend)
-![Vagrant_suspend](https://user-images.githubusercontent.com/123832086/223360500-c4ca6249-fa61-48fc-a6f6-1adf46487c86.png "Vagrant_suspend)
+
+![Vagrant_suspend](https://user-images.githubusercontent.com/123832086/223360500-c4ca6249-fa61-48fc-a6f6-1adf46487c86.png "Vagrant_suspend")
+	
 	* `vagrant halt` выключит виртуальную машину штатным образом.
+
 ![Vagrant_halt](https://user-images.githubusercontent.com/123832086/223361237-30416655-e7ed-48ca-9b1d-72e98ac2a093.png "Vagrant_halt")
 
 1. Ознакомьтесь с графическим интерфейсом VirtualBox, посмотрите как выглядит виртуальная машина, которую создал для вас Vagrant, какие аппаратные ресурсы ей выделены. Какие ресурсы выделены по-умолчанию?
