@@ -14,6 +14,10 @@
 
 ![image](https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png "VirtualBox")
 
+<p align="right">
+ <img src="https://user-images.githubusercontent.com/123832086/221342763-ec55ef81-066b-4380-ae22-be82a5e68652.png" width=40% height=40%>
+</p>
+
 2. Установите средство автоматизации [Hashicorp Vagrant](https://hashicorp-releases.yandexcloud.net/vagrant/).
 >\> wsl --install
 >![image](https://user-images.githubusercontent.com/123832086/221344397-708997b8-9ddd-4092-abf7-09e0e4a65816.png)
