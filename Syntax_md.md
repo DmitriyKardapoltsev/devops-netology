@@ -79,4 +79,7 @@ The background color should be `#ffffff` for light mode and `#0d1117` for dark m
 
 Экранировать знаком \\ символы\`*_{}[]<>()#+-.!|
 
-😃
+: 😃
+
+сноска Here is a simple footnote[^1].
+[^1]: My reference.
