@@ -69,6 +69,8 @@
 <img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width=50% height=50%>
 <img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width="50" height="80">
 
+![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Картинка ссылка из интернета"){:height=50% width=50%}
+
 ![Sun][2]
 
 [2]:https://catherineasquithgallery.com/uploads/posts/2021-02/1614546076_26-p-solntse-na-belom-fone-26.png "Солнце"
