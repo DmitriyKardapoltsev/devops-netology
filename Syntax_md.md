@@ -55,6 +55,7 @@
 Всплыващее окно -
 [Github Kardapoltsev](https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md "Github")
 
+
 Упрощает восприятие кода, ссылки как в книге, можно несколько раз обращаться к одной ссылке
 
 [Github Kardapoltsev][1] \
@@ -64,6 +65,8 @@
 [code]:https://github.com/DmitriyKardapoltsev/devops-netology/blob/main/Syntax_md.md 
 
 ![Текст картинки](https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg "Картинка ссылка из интернета")
+
+<img src="https://img-fotki.yandex.ru/get/45704/100655484.c21/0_1ae1a1_e84fabe0_orig.jpg" width=50% height=50%>
 
 ![Sun][2]
 
