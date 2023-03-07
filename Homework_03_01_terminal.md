@@ -40,6 +40,9 @@
 	
 	![image](https://user-images.githubusercontent.com/123832086/221343246-dc7d8486-1fab-4206-8a72-81e613669a29.png "Отключение Hyper-V")
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/123832086/221343246-dc7d8486-1fab-4206-8a72-81e613669a29.png" width=50% height=50% "Отключение Hyper-V">
+</p>
 	
 	* [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/wsl2-faq#does-wsl-2-use-hyper-v-will-it-be-available-on-windows-10-home) использует Hyper-V, поэтому с ним VirtualBox также несовместим,
 	* аппаратная виртуализация (Intel VT-x, AMD-V) должна быть активна в BIOS,
