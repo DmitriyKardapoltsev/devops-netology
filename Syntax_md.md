@@ -92,3 +92,10 @@ The background color should be `#ffffff` for light mode and `#0d1117` for dark m
 
 сноска Here is a simple footnote[^1].
 [^1]: My reference.
+
+<details>
+	<summary>Подсказка.</summary>
+  `man grep` поможет в ответе на этот вопрос. 
+	</details>
+	
+ Изучите [документ](http://www.smallo.ruhr.de/award.html) о других подобных некорректных вариантах использования pipe.
