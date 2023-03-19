@@ -28,7 +28,7 @@
 
 	**Ответ:**
 - Для всех процессов с PPID `1` в виртуальной машине является родитель с PID `1` созданный пользователем `root` (суперпользователь) по команде `systemd` 
-<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/226164123-10c42305-4edd-4a95-b775-7a5dbf7499e7.png" width=50% height=50% "PID_1"> </p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/226164123-10c42305-4edd-4a95-b775-7a5dbf7499e7.png" width=60% height=60% "PID_1"> </p>
 
 4. Как будет выглядеть команда, которая перенаправит вывод stderr `ls` на другую сессию терминала?
 
