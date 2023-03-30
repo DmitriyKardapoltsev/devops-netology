@@ -10,6 +10,8 @@
  - Зарегистрирован пользователь и осуществлен вход.
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228743638-0f617de8-9b26-4aa6-9061-0612bd2be8ba.png" width=50% height=50%> </p>
 
+ - Сохранены несколько логинов. 
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228752491-84eca5b0-d6e9-4b80-85be-0fe14795c4dd.png" width=30% height=30%> </p>
 
 2. Установите Google Authenticator на мобильный телефон. Настройте вход в Bitwarden-акаунт через Google Authenticator OTP.
 
