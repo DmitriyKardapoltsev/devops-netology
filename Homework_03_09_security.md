@@ -21,8 +21,10 @@
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 
 * [x] установлен apache2
-<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228765277-eac7ea6a-c0ef-44dd-8791-a3132f7fbca2.png" width=50% height=50%> </p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228782697-fb21f692-273b-40ab-9271-59314487e187.png" width=50% height=50%> </p>
 
+* [x] сгенерирован самоподписной сертификат
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228782238-cdef77db-9c8e-4cd6-9952-98cbdee6f002.png" width=50% height=50%> </p>
 
 
 4. Проверьте на TLS-уязвимости произвольный сайт в интернете (кроме сайтов МВД, ФСБ, МинОбр, НацБанк, РосКосмос, РосАтом, РосНАНО и любых госкомпаний, объектов КИИ, ВПК и т. п.).
