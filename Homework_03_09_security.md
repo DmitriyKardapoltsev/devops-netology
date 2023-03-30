@@ -4,16 +4,20 @@
 
 1. Установите плагин Bitwarden для браузера. Зарегестрируйтесь и сохраните несколько паролей.
 
- - Выполнена установка расширения Bitwarden для браузера Google Chrome.
+ - [x] Выполнена установка расширения Bitwarden для браузера Google Chrome.
  <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228743031-ce8cc12c-b8eb-4f88-8b79-f3a60d4235a8.png" width=30% height=30%> </p>
 
- - Зарегистрирован пользователь и осуществлен вход.
+ - [x] Зарегистрирован пользователь и осуществлен вход.
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228743638-0f617de8-9b26-4aa6-9061-0612bd2be8ba.png" width=50% height=50%> </p>
 
- - Сохранены несколько логинов. 
+ - [x] Сохранены несколько логинов. 
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228752491-84eca5b0-d6e9-4b80-85be-0fe14795c4dd.png" width=30% height=30%> </p>
 
 2. Установите Google Authenticator на мобильный телефон. Настройте вход в Bitwarden-акаунт через Google Authenticator OTP.
+
+* [x] Выполнена установка Google Authenticator на мобильный телефон и настроен вход в Bitwarden-акаунт через Google Authenticator OTP (двухэтапная аутентификация)
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228757467-ce737754-90ae-4036-89c2-14ac6c47ee2c.png" width=50% height=50%> </p>
+
 
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 
