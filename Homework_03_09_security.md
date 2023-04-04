@@ -20,12 +20,9 @@
 
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 
-* [x] установлен apache2
-<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228782697-fb21f692-273b-40ab-9271-59314487e187.png" width=50% height=50%> </p>
-
-* [x] сгенерирован самоподписной сертификат
-<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228782238-cdef77db-9c8e-4cd6-9952-98cbdee6f002.png" width=50% height=50%> </p>
-
+- Выполняю последовательно команды согласно презентации стр.18 (картинка ниже), а также статье `https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04` на сервере VirtualBox, который смонтировали ранее в процессе подготовки домашнего задания, но на этапе загрузки своего сайта в браузере Google Chrome (https://127.0.0.1/) выдает ошибку **Не удается получить доступ к сайту**
+<p align="left"> <img src="https://user-images.githubusercontent.com/123832086/229725638-aa0a750d-2270-4dfa-aa6f-e55c60407c3e.png" width=50% height=50%> </p>
+<p align="right"> <img src="https://user-images.githubusercontent.com/123832086/229726726-b17ddd0b-17b8-4c94-be20-e278964dd759.png" width=50% height=50%> </p>
 
 4. Проверьте на TLS-уязвимости произвольный сайт в интернете (кроме сайтов МВД, ФСБ, МинОбр, НацБанк, РосКосмос, РосАтом, РосНАНО и любых госкомпаний, объектов КИИ, ВПК и т. п.).
 
