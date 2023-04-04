@@ -38,15 +38,16 @@
 
 ```
 # Выполнена установка утилиты tcpdump
-sudo apt install tcpdump
+dkard@DKard:~$ sudo apt install tcpdump
 # Запущена утилита с указанием количества пакетов и записью в файл в формате .pcap
-sudo tcpdump -c 100 -w dump.pcap
+dkard@DKard:~$ sudo tcpdump -c 100 -w dump.pcap
 tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 100 packets captured
 100 packets received by filter
 0 packets dropped by kernel
 # Открыт файл dump.pcap в Wireshark
 ```
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229748410-b822f39d-ee91-418e-ac51-b27d5d6882c2.png" width=80% height=80% "Dump.pcap"> </p>
 
 ---
  
