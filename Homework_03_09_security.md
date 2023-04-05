@@ -174,6 +174,38 @@ vagrant@vagrant:~$ sudo systemctl reload apache2
 
 6. Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH-клиента так, чтобы вход на удалённый сервер осуществлялся по имени сервера.
 
+```
+# Переименование ключей
+  dkard@DKard:~$ mv .ssh/id_rsa .ssh/key_rsa
+  dkard@DKard:~$ mv .ssh/id_rsa.pub .ssh/key_rsa.pub
+# создание файла конфигурации SSH-клиента
+  dkard@DKard:~$ vim .ssh/config
+     Host myvagrant
+        HostName 192.168.33.10
+        IdentityFile ~/.ssh/key_rsa
+        User vagrant
+ # вход по имени сервера
+  dkard@DKard:~$ ssh myvagrant
+       Enter passphrase for key '/home/dkard/.ssh/key_rsa':
+       Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+
+       * Documentation:  https://help.ubuntu.com
+       * Management:     https://landscape.canonical.com
+       * Support:        https://ubuntu.com/advantage
+
+         System information as of Wed 05 Apr 2023 11:49:31 AM UTC
+
+        System load:  0.0                Processes:             121
+        Usage of /:   12.6% of 30.34GB   Users logged in:       0
+        Memory usage: 24%                IPv4 address for eth0: 10.0.2.15
+        Swap usage:   0%                 IPv4 address for eth1: 192.168.33.10
+
+
+       This system is built by the Bento project by Chef Software
+       More information can be found at https://github.com/chef/bento
+       Last login: Wed Apr  5 11:11:58 2023 from 192.168.33.1
+```
+
 7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
 
 ```
@@ -188,15 +220,3 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
 # Открыт файл dump.pcap в Wireshark
 ```
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229748410-b822f39d-ee91-418e-ac51-b27d5d6882c2.png" width=80% height=80% "Dump.pcap"> </p>
-
----
- 
-## Задание со звёздочкой* 
-
-Это самостоятельное задание, его выполнение необязательно.
-
-8. Просканируйте хост scanme.nmap.org. Какие сервисы запущены?
-
-9. Установите и настройте фаервол UFW на веб-сервер из задания 3. Откройте доступ снаружи только к портам 22, 80, 443.
-
-----
