@@ -100,34 +100,43 @@ end
 ```
 * Подклчючение к виртуальной машине vagrant
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229983927-de918d48-d75a-4ec7-aa71-745b67a4b30c.png" width=60% height=60%> </p>
+
 * Обновление локального пакета, установка `apache2`, открытие портов `http` и `https`
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229984951-1a518a9a-b2b1-4f37-af1e-56d3a88198e6.png" width=50% height=50%> </p>
+
 * Включение модуля `mod_ssl` Apache, обеспечивающего поддержку шифрования SSL. Перезапуск Apache для активации модуля.
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229985149-fa77e179-6729-448c-9b56-1267f63d0bef.png" width=50% height=50%> </p>
+
 * Создание SSL-сертификата командой `openssl`
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229985602-4ddd8d8e-5b00-41db-acf3-215c59fe495f.png" width=50% height=50%> </p>
+
 * Настройка Apache
+
 ```
 # создание и открытие файла конфигурации
 vagrant@vagrant:~$ sudo vim /etc/apache2/sites-available/www.example.com.conf
 ```
+
 * Конфигурация VirtualHost
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229986684-b8a0a2b4-eb42-4e8a-a854-e840e64bd478.png" width=50% height=50%> </p>
+
 * Создание `DocumentRoot` и помещение в него HTML
+
 ```
 vagrant@vagrant:~$ sudo mkdir /var/www/www.example.com
 vagrant@vagrant:~$ sudo vim /var/www/www.example.com/index.html
 <h1>it worked!</h1>
 ```
+
 * Включение файла конфигурации при помощи `a2ensite`, проверка ошибок конфигурации, перезагрузка Apache
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229988271-7683a17f-d326-4b58-bb2c-ada79be664e2.png" width=50% height=50%> </p>
 
-* asds
+* загрузка своего сайта в браузере GoogleChrome
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229988680-d4511259-039a-408a-8b19-5af9a37e6b4d.png" width=50% height=50%> </p>
 
+* sadsa
 
-
-
-
-
+------------------
 - Выполняю последовательно команды согласно презентации стр.18 (картинка ниже), а также статье `https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04` на сервере VirtualBox, который смонтировали ранее в процессе подготовки домашнего задания, но на этапе загрузки своего сайта в браузере Google Chrome (https://127.0.0.1/) выдает ошибку **Не удается получить доступ к сайту**
 <p align="left"> <img src="https://user-images.githubusercontent.com/123832086/229725638-aa0a750d-2270-4dfa-aa6f-e55c60407c3e.png" width=50% height=50%> </p>
 <p align="right"> <img src="https://user-images.githubusercontent.com/123832086/229726726-b17ddd0b-17b8-4c94-be20-e278964dd759.png" width=50% height=50%> </p>
