@@ -20,6 +20,114 @@
 
 ~~***3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.***~~
 
+* Запуск командной строки Windows PowerShell от имени администратора
+* Развертывание и запуск виртуальной машины на VirtualBox Ububtu-20.04. Текст **VagrantFile** приведен ниже.
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+  config.vm.box = "bento/ubuntu-20.04"
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # NOTE: This will enable public access to the opened port
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine and only allow access
+  # via 127.0.0.1 to disable public access
+  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.10"
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+ config.vm.provider "virtualbox" do |v|
+ v.memory = 1024
+ v.cpus = 2
+end
+end
+```
+* Подклчючение к виртуальной машине vagrant
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229983927-de918d48-d75a-4ec7-aa71-745b67a4b30c.png" width=60% height=60%> </p>
+* Обновление локального пакета, установка `apache2`, открытие портов `http` и `https`
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229984951-1a518a9a-b2b1-4f37-af1e-56d3a88198e6.png" width=50% height=50%> </p>
+* Включение модуля `mod_ssl` Apache, обеспечивающего поддержку шифрования SSL. Перезапуск Apache для активации модуля.
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229985149-fa77e179-6729-448c-9b56-1267f63d0bef.png" width=50% height=50%> </p>
+* Создание SSL-сертификата командой `openssl`
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229985602-4ddd8d8e-5b00-41db-acf3-215c59fe495f.png" width=50% height=50%> </p>
+* Настройка Apache
+```
+# создание и открытие файла конфигурации
+vagrant@vagrant:~$ sudo vim /etc/apache2/sites-available/www.example.com.conf
+```
+* Конфигурация VirtualHost
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229986684-b8a0a2b4-eb42-4e8a-a854-e840e64bd478.png" width=50% height=50%> </p>
+* Создание `DocumentRoot` и помещение в него HTML
+```
+vagrant@vagrant:~$ sudo mkdir /var/www/www.example.com
+vagrant@vagrant:~$ sudo vim /var/www/www.example.com/index.html
+<h1>it worked!</h1>
+```
+* Включение файла конфигурации при помощи `a2ensite`, проверка ошибок конфигурации, перезагрузка Apache
+
+* asds
+
+
+
+
+
+
 - Выполняю последовательно команды согласно презентации стр.18 (картинка ниже), а также статье `https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04` на сервере VirtualBox, который смонтировали ранее в процессе подготовки домашнего задания, но на этапе загрузки своего сайта в браузере Google Chrome (https://127.0.0.1/) выдает ошибку **Не удается получить доступ к сайту**
 <p align="left"> <img src="https://user-images.githubusercontent.com/123832086/229725638-aa0a750d-2270-4dfa-aa6f-e55c60407c3e.png" width=50% height=50%> </p>
 <p align="right"> <img src="https://user-images.githubusercontent.com/123832086/229726726-b17ddd0b-17b8-4c94-be20-e278964dd759.png" width=50% height=50%> </p>
