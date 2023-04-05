@@ -18,7 +18,7 @@
 * [x] Выполнена установка Google Authenticator на мобильный телефон и настроен вход в Bitwarden-акаунт через Google Authenticator OTP (двухэтапная аутентификация)
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/228757467-ce737754-90ae-4036-89c2-14ac6c47ee2c.png" width=50% height=50%> </p>
 
-~~***3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.***~~
+3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 
 * Запуск командной строки Windows PowerShell от имени администратора
 * Развертывание и запуск виртуальной машины на VirtualBox Ububtu-20.04. Текст **VagrantFile** приведен ниже.
@@ -133,17 +133,27 @@ vagrant@vagrant:~$ sudo vim /var/www/www.example.com/index.html
 * Включение файла конфигурации при помощи `a2ensite`, проверка ошибок конфигурации, перезагрузка Apache
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229988271-7683a17f-d326-4b58-bb2c-ada79be664e2.png" width=70% height=70%> </p>
 
-* загрузка своего сайта в браузере GoogleChrome
-<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229988680-d4511259-039a-408a-8b19-5af9a37e6b4d.png" width=70% height=70%> </p>
+* загрузка своего сайта в браузере GoogleChrome. 
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/230045455-c4608602-4669-4905-82bb-5e1c51dcaf71.png" width=70% height=70%> </p>
 
 * Запуск `curl`
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/229989919-a97cc7c5-c847-4019-b8d4-9296b64942db.png" width=70% height=70%> </p>
 
+* перенаправление `http` на `https`
 
-------------------
-- Выполняю последовательно команды согласно презентации стр.18 (картинка ниже), а также статье `https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04` на сервере VirtualBox, который смонтировали ранее в процессе подготовки домашнего задания, но на этапе загрузки своего сайта в браузере Google Chrome (https://127.0.0.1/) выдает ошибку **Не удается получить доступ к сайту**
-<p align="left"> <img src="https://user-images.githubusercontent.com/123832086/229725638-aa0a750d-2270-4dfa-aa6f-e55c60407c3e.png" width=50% height=50%> </p>
-<p align="right"> <img src="https://user-images.githubusercontent.com/123832086/229726726-b17ddd0b-17b8-4c94-be20-e278964dd759.png" width=50% height=50%> </p>
+```
+# редактируем файл конфигурации
+vagrant@vagrant:~$ sudo vim /etc/apache2/sites-available/www.example.com.conf
+# проверяем синтаксис и перезагружаем Apache
+vagrant@vagrant:~$ sudo apache2ctl configtest
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+vagrant@vagrant:~$ sudo systemctl reload apache2
+```
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/230046714-e0a86f36-a83b-4711-90ed-665956d2e689.png" width=70% height=70%> </p>
+
+* демонстрация
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/230051893-68a95c7b-1559-4b4b-acad-762c811d9932.png" width=70% height=70%> </p>
 
 4. Проверьте на TLS-уязвимости произвольный сайт в интернете (кроме сайтов МВД, ФСБ, МинОбр, НацБанк, РосКосмос, РосАтом, РосНАНО и любых госкомпаний, объектов КИИ, ВПК и т. п.).
 
