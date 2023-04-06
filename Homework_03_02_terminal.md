@@ -9,7 +9,7 @@
 1. Какого типа команда `cd`? Попробуйте объяснить, почему она именно такого типа: опишите ход своих мыслей и поясните, если считаете, что она могла бы быть другого типа.
 
 	**Ответ:**
-- команда `change directory` является встроенной `cd is a shell builtin` в оболочку для того, чтобы в случае сбоев, либо случайных некорректных изменений, можно было восстановить функционал и работоспособность системы. 
+- команда `change directory` является встроенной `cd is a shell builtin` в оболочку, иначе для изменения текущей директории потребуется запускать отдельный дополнительный процесс, а также, в случае сбоев, либо случайных некорректных изменений, можно будет восстановить функционал и работоспособность системы.
 
 2. Какая альтернатива без pipe для команды `grep <some_string> <some_file> | wc -l`?   
 
@@ -50,7 +50,29 @@
 
 	**Ответ:**
 ```
-# 
+# Команда `bash 5>&1` создает файловый дискриптор и перенаправляет его в стандартный вывод данных.
+	vagrant@vagrant:~$ bash 5>&1
+	vagrant@vagrant:~$ lsof -p $$
+		COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF    NODE NAME
+		bash    1605 vagrant  cwd    DIR  253,0     4096 1314079 /home/vagrant
+		bash    1605 vagrant  rtd    DIR  253,0     4096       2 /
+		bash    1605 vagrant  txt    REG  253,0  1183448  131546 /usr/bin/bash
+		bash    1605 vagrant  mem    REG  253,0    51856  137862 /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+		bash    1605 vagrant  mem    REG  253,0  3035952  131073 /usr/lib/locale/locale-archive
+		bash    1605 vagrant  mem    REG  253,0  2029592  137717 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+		bash    1605 vagrant  mem    REG  253,0    18848  137735 /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+		bash    1605 vagrant  mem    REG  253,0   192032  137935 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.2
+		bash    1605 vagrant  mem    REG  253,0    27002  266488 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+		bash    1605 vagrant  mem    REG  253,0   191504  137676 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+		bash    1605 vagrant    0u   CHR  136,0      0t0       3 /dev/pts/0
+		bash    1605 vagrant    1u   CHR  136,0      0t0       3 /dev/pts/0
+		bash    1605 vagrant    2u   CHR  136,0      0t0       3 /dev/pts/0
+		bash    1605 vagrant    5u   CHR  136,0      0t0       3 /dev/pts/0
+		bash    1605 vagrant  255u   CHR  136,0      0t0       3 /dev/pts/0
+# Команда `echo netology > /proc/$$/fd/5` перенаправляет вывод слова netology в созданный дискриптор 5, а тот, в свою очередь, перенаправляет на стандартный вывод данных (задано ранее при создании дискриптора). В следствие чего, мы увидим слово netology на экране терминала
+	vagrant@vagrant:~$ echo netology > /proc/$$/fd/5
+		netology
+```
 
 8. Получится ли в качестве входного потока для pipe использовать только stderr команды, не потеряв отображение stdout на pty?  
 	Напоминаем: по умолчанию через pipe передаётся только stdout команды слева от `|` на stdin команды справа.
