@@ -117,7 +117,60 @@ cat: file: No such file or directory
 
 	Почитайте, почему так происходит и как изменить поведение.
 	
-~~13. Бывает, что есть необходимость переместить запущенный процесс из одной сессии в другую. Попробуйте сделать это, воспользовавшись `reptyr`. Например, так можно перенести в `screen` процесс, который вы запустили по ошибке в обычной SSH-сессии.~~
+13. Бывает, что есть необходимость переместить запущенный процесс из одной сессии в другую. Попробуйте сделать это, воспользовавшись `reptyr`. Например, так можно перенести в `screen` процесс, который вы запустили по ошибке в обычной SSH-сессии.
+
+```
+# Запустил процесс top
+	vagrant@vagrant:~$ top
+		top - 07:10:01 up  1:14,  1 user,  load average: 0.00, 0.00, 0.00
+		Tasks: 107 total,   1 running, 106 sleeping,   0 stopped,   0 zombie
+		%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st
+		MiB Mem :    976.7 total,    170.8 free,    137.3 used,    668.5 buff/cache
+		MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.    685.7 avail Mem
+
+    		PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    		392 root      20   0       0      0      0 I   0.3   0.0   0:06.45 kworker/0:4-events
+   		1923 vagrant   20   0    9236   4020   3368 R   0.3   0.4   0:00.05 top
+# Перевел в фоновый режим
+		[1]+  Stopped                 top
+# Возобновил процесс в фоновом режиме
+	vagrant@vagrant:~$ bg
+		[1]+ top &
+# Отключил процесс от текущего родителя и запустил терминальный мультплексор tmux
+	vagrant@vagrant:~$ disown top
+		-bash: warning: deleting stopped job 1 with process group 1923
+	vagrant@vagrant:~$ jobs
+	vagrant@vagrant:~$ ps -a
+    		PID TTY          TIME CMD
+   		1923 pts/0    00:00:00 top
+   		1927 pts/0    00:00:00 ps
+	vagrant@vagrant:~$ tmux
+# Подключиться к фоновому процессу не удалось (я так понимаю недостаточно прав)
+	vagrant@vagrant:~$ reptyr 1923
+		Unable to attach to pid 1923: Operation not permitted
+		The kernel denied permission while attaching. If your uid matches
+		the target's, check the value of /proc/sys/kernel/yama/ptrace_scope.
+		For more information, see /etc/sysctl.d/10-ptrace.conf
+# Отключили мультиплексор терминала Ctrl+B d
+# Отключился от сервера
+	vagrant@vagrant:~$ exit
+		logout
+		Connection to 127.0.0.1 closed.
+# Повторное подключение
+	PS C:\vagrant2> vagrant ssh
+		Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+		.....
+# Подключение к существующей сессии мультиплексора
+	vagrant@vagrant:~$ tmux attach
+# Информация сохранилась
+	vagrant@vagrant:~$ reptyr 1923
+		Unable to attach to pid 1923: Operation not permitted
+		The kernel denied permission while attaching. If your uid matches
+		the target's, check the value of /proc/sys/kernel/yama/ptrace_scope.
+		For more information, see /etc/sysctl.d/10-ptrace.conf
+	vagrant@vagrant:~$
+	vagrant@vagrant:~$
+```
 
 ~~14. `sudo echo string > /root/new_file` не даст выполнить перенаправление под обычным пользователем, так как перенаправлением занимается процесс shell, который запущен без `sudo` под вашим пользователем. Для решения этой проблемы можно использовать конструкцию `echo string | sudo tee /root/new_file`. Узнайте, что делает команда `tee` и почему в отличие от `sudo echo` команда с `sudo tee` будет работать.~~
 
