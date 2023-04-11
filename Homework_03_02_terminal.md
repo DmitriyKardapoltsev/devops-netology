@@ -99,7 +99,7 @@ cat: file: No such file or directory
 11. Узнайте, какую наиболее старшую версию набора инструкций SSE поддерживает ваш процессор с помощью `/proc/cpuinfo`.
 
 ```
-# Наиболее старшая версия инструкций sse4_1
+# Наиболее старшая версия инструкций sse4_2
 	vagrant@vagrant:~$ grep sse /proc/cpuinfo
 		flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm 		constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni ssse3 cx16 pcid sse4_1 ss
 	4_2 popcnt hypervisor lahf_lm invpcid_single ibrs_enhanced fsgsbase invpcid md_clear flush_l1d arch_capabilities
@@ -130,15 +130,24 @@ cat: file: No such file or directory
 ```
 # Запустил процесс top
 	vagrant@vagrant:~$ top
-		top - 07:10:01 up  1:14,  1 user,  load average: 0.00, 0.00, 0.00
-		Tasks: 107 total,   1 running, 106 sleeping,   0 stopped,   0 zombie
-		%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st
-		MiB Mem :    976.7 total,    170.8 free,    137.3 used,    668.5 buff/cache
-		MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.    685.7 avail Mem
+		top - 05:08:46 up 8 min,  1 user,  load average: 0.00, 0.22, 0.18
+		Tasks: 108 total,   1 running, 107 sleeping,   0 stopped,   0 zombie
+		%Cpu(s):  0.3 us,  0.2 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+		MiB Mem :    976.7 total,    438.3 free,    142.5 used,    395.9 buff/cache
+		MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.    687.1 avail Mem
 
-    		PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-    		392 root      20   0       0      0      0 I   0.3   0.0   0:06.45 kworker/0:4-events
-   		1923 vagrant   20   0    9236   4020   3368 R   0.3   0.4   0:00.05 top
+   		 PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+     		35 root      20   0       0      0      0 I   0.7   0.0   0:00.53 kworker/1:1-events
+    		11 root      20   0       0      0      0 I   0.3   0.0   0:00.78 rcu_sched
+     		14 root      20   0       0      0      0 I   0.3   0.0   0:01.98 kworker/0:1-events
+     		19 root      20   0       0      0      0 S   0.3   0.0   0:00.63 ksoftirqd/1
+    		518 root      rt   0  280200  18000   8208 S   0.3   1.8   0:00.57 multipathd
+   		1589 vagrant   20   0   13928   6436   4868 S   0.3   0.6   0:00.65 sshd
+   		1627 root      20   0       0      0      0 I   0.3   0.0   0:00.27 kworker/u4:1-events_power_efficient
+   		1656 vagrant   20   0    9256   3972   3304 R   0.3   0.4   0:00.11 top
+      		1 root      20   0  103940  12932   8544 S   0.0   1.3   0:12.51 systemd
+      		2 root      20   0       0      0      0 S   0.0   0.0   0:00.04 kthreadd
+      		3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
 # Перевел в фоновый режим
 		[1]+  Stopped                 top
 # Возобновил процесс в фоновом режиме
@@ -146,38 +155,47 @@ cat: file: No such file or directory
 		[1]+ top &
 # Отключил процесс от текущего родителя и запустил терминальный мультплексор tmux
 	vagrant@vagrant:~$ disown top
-		-bash: warning: deleting stopped job 1 with process group 1923
+		-bash: warning: deleting stopped job 1 with process group 1656
 	vagrant@vagrant:~$ jobs
 	vagrant@vagrant:~$ ps -a
     		PID TTY          TIME CMD
-   		1923 pts/0    00:00:00 top
-   		1927 pts/0    00:00:00 ps
+   		1656 pts/0    00:00:00 top
+   		1771 pts/0    00:00:00 ps
 	vagrant@vagrant:~$ tmux
-# Подключиться к фоновому процессу не удалось (я так понимаю недостаточно прав)
-	vagrant@vagrant:~$ reptyr 1923
-		Unable to attach to pid 1923: Operation not permitted
-		The kernel denied permission while attaching. If your uid matches
-		the target's, check the value of /proc/sys/kernel/yama/ptrace_scope.
-		For more information, see /etc/sysctl.d/10-ptrace.conf
+# Подключение к фоновому процессу 
+	vagrant@vagrant:~$ reptyr 1656
+		top - 05:52:38 up 51 min,  3 users,  load average: 0.51, 0.25, 0.10
+		Tasks: 114 total,   2 running, 111 sleeping,   0 stopped,   1 zombie
+		%Cpu(s):  0.0 us,  0.5 sy,  0.0 ni, 99.1 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+		MiB Mem :    976.7 total,    416.9 free,    150.3 used,    409.5 buff/cache
+		MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.    677.8 avail Mem
+
+    		PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   		1827 vagrant   20   0    2592   1944   1840 R   5.3   0.2   1:25.83 reptyr
+   		1712 root      20   0       0      0      0 I   1.0   0.0   0:04.40 kworker/0:0-events
+     		35 root      20   0       0      0      0 I   0.7   0.0   0:06.40 kworker/1:1-events
+    		518 root      rt   0  280200  18000   8208 S   0.3   1.8   0:03.59 multipathd
+   		1656 vagrant   20   0    9256   3992   3304 R   0.3   0.4   0:01.98 top
 # Отключили мультиплексор терминала Ctrl+B d
 # Отключился от сервера
 	vagrant@vagrant:~$ exit
 		logout
 		Connection to 127.0.0.1 closed.
-# Повторное подключение
+# Открыл новый терминал и подключился к серверу.
 	PS C:\vagrant2> vagrant ssh
 		Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
 		.....
 # Подключение к существующей сессии мультиплексора
 	vagrant@vagrant:~$ tmux attach
-# Информация сохранилась
-	vagrant@vagrant:~$ reptyr 1923
-		Unable to attach to pid 1923: Operation not permitted
-		The kernel denied permission while attaching. If your uid matches
-		the target's, check the value of /proc/sys/kernel/yama/ptrace_scope.
-		For more information, see /etc/sysctl.d/10-ptrace.conf
-	vagrant@vagrant:~$
-	vagrant@vagrant:~$
+# Информация сохранилась. Процесс продолжает работать.
+	vagrant@vagrant:~$ reptyr 1656
+		top - 05:41:05 up 40 min,  2 users,  load average: 0.08, 0.02, 0.00
+		Tasks: 112 total,   2 running, 108 sleeping,   1 stopped,   1 zombie
+		%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+		MiB Mem :    976.7 total,    425.4 free,    145.0 used,    406.2 buff/cache
+		MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.    683.5 avail Mem
+		.....
+		
 ```
 
 14. `sudo echo string > /root/new_file` не даст выполнить перенаправление под обычным пользователем, так как перенаправлением занимается процесс shell, который запущен без `sudo` под вашим пользователем. Для решения этой проблемы можно использовать конструкцию `echo string | sudo tee /root/new_file`. Узнайте, что делает команда `tee` и почему в отличие от `sudo echo` команда с `sudo tee` будет работать.
