@@ -237,6 +237,8 @@ dkard@DKard:~$ dig +short A dns.google
 
 ***Ответ:***
 
+PTR запись dns.google. для IP 8.8.8.8 и аналогичная для IP 8.8.4.4
+
 ```
 dkard@DKard:~$ dig -x 8.8.8.8
 
