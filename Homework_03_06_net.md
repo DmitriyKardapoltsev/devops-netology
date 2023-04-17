@@ -112,8 +112,11 @@ HOST: stackoverflow.com
 
 **Шаг 4.** Какому провайдеру принадлежит ваш IP-адрес? Какой автономной системе AS? Воспользуйтесь утилитой `whois`.
 
-```
-# Провайдер JSC "Cable tv Mark", система AS39001
+ ***Ответ:***
+ 
+ Провайдер JSC "Cable tv Mark", система AS39001
+
+ ```
      vagrant@vagrant:~$ whois 88.80.60.161
             % This is the RIPE Database query service.
             % The objects are in RPSL format.
