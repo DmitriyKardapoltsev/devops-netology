@@ -12,9 +12,8 @@
 1. Убедитесь, что у вас установлены необходимые сетевые утилиты — dig, traceroute, mtr, telnet.
 2. Используйте `apt install` для установки пакетов.
 
-```
-* Утилиты (dig, traceroute, mtr, telnet) установлены.
-```
+* [x] Утилиты (dig, traceroute, mtr, telnet) установлены.
+
 
 ### Дополнительные материалы для выполнения задания
 
@@ -41,6 +40,8 @@ HOST: stackoverflow.com
 [press enter]
 ```
 *В ответе укажите полученный HTTP-код и поясните, что он означает.*
+
+***Ответ:***
 
 ```
 # Выполнено подключение к виртуальному серверу Vagrant Ubuntu 20.04.
@@ -89,15 +90,17 @@ HOST: stackoverflow.com
 
 - [x] отправьте запрос [http://netology.ru](http://netology.ru);
  
- - найдите первый ответ HTTP-сервера, откройте вкладку `Headers`;
+ - [x] найдите первый ответ HTTP-сервера, откройте вкладку `Headers`;
  
 <p align="center"> <img src="https://user-images.githubusercontent.com/123832086/232476160-4bacfb85-2e39-4906-b30c-d20995f228c1.png" width=80% height=80% "> </p>
  
  - [x] укажите в ответе полученный HTTP-код;
- код 307 Internal Redirect. Перенаправление на протокол HTTPS.
  
- - проверьте время загрузки страницы и определите, какой запрос обрабатывался дольше всего;
- время загрузки страницы 42сек. Дольше всего обрабатывался первый запрос 513 мсек.
+    Код 307 Internal Redirect. Перенаправление на протокол HTTPS.
+ 
+ - [x] проверьте время загрузки страницы и определите, какой запрос обрабатывался дольше всего;
+ 
+    Время загрузки страницы 42сек. Дольше всего обрабатывался первый запрос 513 мсек.
  
  - [x] приложите скриншот консоли браузера в ответ.
 
@@ -105,9 +108,74 @@ HOST: stackoverflow.com
  
 **Шаг 3.** Какой IP-адрес у вас в интернете?
 
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/232483673-3d6cadaa-aff8-46f4-b7f3-d79b405e14dd.png" width=80% height=80% "> </p>
+
 **Шаг 4.** Какому провайдеру принадлежит ваш IP-адрес? Какой автономной системе AS? Воспользуйтесь утилитой `whois`.
 
-**Шаг 5.** Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой `traceroute`.
+```
+# Провайдер JSC "Cable tv Mark", система AS39001
+     vagrant@vagrant:~$ whois 88.80.60.161
+            % This is the RIPE Database query service.
+            % The objects are in RPSL format.
+            %
+            % The RIPE Database is subject to Terms and Conditions.
+            % See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+            % Note: this output has been filtered.
+            %       To receive output for a database update, use the "-B" flag.
+
+            % Information related to '88.80.54.0 - 88.80.61.255'
+
+            % Abuse contact for '88.80.54.0 - 88.80.61.255' is 'abuse@mtu.ru'
+
+            inetnum:        88.80.54.0 - 88.80.61.255
+            netname:        TVIN-NET
+            descr:          JSC "Cable tv Mark"
+            country:        RU
+            admin-c:        MIN24-RIPE
+            tech-c:         MIN24-RIPE
+            status:         ASSIGNED PA
+            mnt-by:         MNT-NEWTONE
+            mnt-lower:      MNT-NEWTONE
+            mnt-routes:     MNT-NEWTONE
+            created:        2006-12-06T15:08:04Z
+            last-modified:  2012-04-10T07:53:26Z
+            source:         RIPE
+
+            role:           PJSC "Mobile TeleSystems", Izhevsk NOC fix
+            address:        36, Dzerginskogo st.
+            abuse-mailbox:  noc@izh.mts.ru
+            address:        Izhevsk, 426000, Russian Federation
+            admin-c:        AA30998-RIPE
+            admin-c:        MG24450-RIPE
+            admin-c:        RA9077-RIPE
+            tech-c:         AA30998-RIPE
+            tech-c:         MG24450-RIPE
+            tech-c:         RA9077-RIPE
+            remarks:        -------------------------------------------------
+            remarks:        Please report SPAM and Network security issues to
+            remarks:        noc@izh.mts.ru
+            remarks:        -------------------------------------------------
+            nic-hdl:        MIN24-RIPE
+            mnt-by:         MNT-NEWTONE
+            created:        2012-04-09T08:55:16Z
+            last-modified:  2018-02-07T05:38:27Z
+            source:         RIPE # Filtered
+
+            % Information related to '88.80.32.0/19AS39001'
+
+            route:          88.80.32.0/19
+            descr:          Newtone
+            origin:         AS39001
+            mnt-by:         MNT-NEWTONE
+            created:        2005-11-30T05:29:55Z
+            last-modified:  2005-11-30T08:22:43Z
+            source:         RIPE # Filtered
+
+            % This query was served by the RIPE Database Query Service version 1.106 (BUSA)
+```
+
+ **Шаг 5.** Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой `traceroute`.
 
 **Шаг 6.** Повторите задание 5 в утилите `mtr`. На каком участке наибольшая задержка — delay?
 
