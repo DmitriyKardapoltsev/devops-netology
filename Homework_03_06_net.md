@@ -241,42 +241,40 @@ PTR запись dns.google. для IP 8.8.8.8 и аналогичная для 
 
 ```
 dkard@DKard:~$ dig -x 8.8.8.8
+    ; <<>> DiG 9.18.1-1ubuntu1.3-Ubuntu <<>> -x 8.8.8.8
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59374
+    ;; flags: qr rd ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+    ;; WARNING: recursion requested but not available
 
-; <<>> DiG 9.18.1-1ubuntu1.3-Ubuntu <<>> -x 8.8.8.8
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59374
-;; flags: qr rd ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
-;; WARNING: recursion requested but not available
+    ;; QUESTION SECTION:
+    ;8.8.8.8.in-addr.arpa.          IN      PTR
 
-;; QUESTION SECTION:
-;8.8.8.8.in-addr.arpa.          IN      PTR
+    ;; ANSWER SECTION:
+    8.8.8.8.in-addr.arpa.   0       IN      PTR     dns.google.
 
-;; ANSWER SECTION:
-8.8.8.8.in-addr.arpa.   0       IN      PTR     dns.google.
-
-;; Query time: 30 msec
-;; SERVER: 172.22.64.1#53(172.22.64.1) (UDP)
-;; WHEN: Mon Apr 17 21:20:20 +04 2023
-;; MSG SIZE  rcvd: 82
+    ;; Query time: 30 msec
+    ;; SERVER: 172.22.64.1#53(172.22.64.1) (UDP)
+    ;; WHEN: Mon Apr 17 21:20:20 +04 2023
+    ;; MSG SIZE  rcvd: 82
 
 dkard@DKard:~$ dig -x 8.8.4.4
+     ; <<>> DiG 9.18.1-1ubuntu1.3-Ubuntu <<>> -x 8.8.4.4
+     ;; global options: +cmd
+     ;; Got answer:
+     ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21980
+     ;; flags: qr rd ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+     ;; WARNING: recursion requested but not available
 
-; <<>> DiG 9.18.1-1ubuntu1.3-Ubuntu <<>> -x 8.8.4.4
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21980
-;; flags: qr rd ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
-;; WARNING: recursion requested but not available
+     ;; QUESTION SECTION:
+     ;4.4.8.8.in-addr.arpa.          IN      PTR
 
-;; QUESTION SECTION:
-;4.4.8.8.in-addr.arpa.          IN      PTR
+     ;; ANSWER SECTION:
+     4.4.8.8.in-addr.arpa.   0       IN      PTR     dns.google.
 
-;; ANSWER SECTION:
-4.4.8.8.in-addr.arpa.   0       IN      PTR     dns.google.
-
-;; Query time: 19 msec
-;; SERVER: 172.22.64.1#53(172.22.64.1) (UDP)
-;; WHEN: Mon Apr 17 21:20:33 +04 2023
-;; MSG SIZE  rcvd: 82
+     ;; Query time: 19 msec
+     ;; SERVER: 172.22.64.1#53(172.22.64.1) (UDP)
+     ;; WHEN: Mon Apr 17 21:20:33 +04 2023
+     ;; MSG SIZE  rcvd: 82
 ```
