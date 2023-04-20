@@ -138,7 +138,7 @@ show bgp x.x.x.x/32
          10.100.0.0/16 via 10.0.0.100 dev dummy2
          192.168.10.0/24 dev dummy2 proto kernel scope link src 192.168.10.100
          192.168.33.0/24 dev eth1 proto kernel scope link src 192.168.33.10
-    ```
+```
 
 3. Проверьте открытые TCP-порты в Ubuntu. Какие протоколы и приложения используют эти порты? Приведите несколько примеров.
 
@@ -150,6 +150,7 @@ LISTEN     0          128        0.0.0.0:22             0.0.0.0:*             us
 LISTEN     0          511        *:443                  *:*                   users:(("apache2",pid=885,fd=6),("apache2",pid=884,fd=6),("apache2",pid=650,fd=6))
 LISTEN     0          511        *:80                   *:*                   users:(("apache2",pid=885,fd=4),("apache2",pid=884,fd=4),("apache2",pid=650,fd=4))
 LISTEN     0          128        [::]:22                [::]:*                users:(("sshd",pid=747,fd=4))
+
 ```
 
 4. Проверьте используемые UDP-сокеты в Ubuntu. Какие протоколы и приложения используют эти порты?
