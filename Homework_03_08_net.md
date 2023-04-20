@@ -153,6 +153,15 @@ LISTEN     0          511        *:443                  *:*                   us
 LISTEN     0          511        *:80                   *:*                   users:(("apache2",pid=885,fd=4),("apache2",pid=884,fd=4),("apache2",pid=650,fd=4))
 LISTEN     0          128        [::]:22                [::]:*                users:(("sshd",pid=747,fd=4))
 
+----
+vagrant@vagrant:~$ sudo netstat -ntlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      606/systemd-resolve
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      747/sshd: /usr/sbin
+tcp6       0      0 :::443                  :::*                    LISTEN      650/apache2
+tcp6       0      0 :::80                   :::*                    LISTEN      650/apache2
+tcp6       0      0 :::22                   :::*                    LISTEN      747/sshd: /usr/sbin
 ```
 
 53 порт TCP использует systemd
