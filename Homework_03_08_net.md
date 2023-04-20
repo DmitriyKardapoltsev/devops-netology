@@ -174,6 +174,7 @@ UNCONN  0        0          127.0.0.53%lo:53      0.0.0.0:*             users:((
 
 5. Используя diagrams.net, создайте L3-диаграмму вашей домашней сети или любой другой сети, с которой вы работали. 
 
+<p align="center"> <img src="https://user-images.githubusercontent.com/123832086/233416588-e0277704-3c25-491d-b24f-71c7fcf2c538.png" width=60% height=60% "> </p>
 
 
 
