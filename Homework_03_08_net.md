@@ -108,6 +108,38 @@ show bgp x.x.x.x/32
 
 2. Создайте dummy-интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
 
+***Ответ:***
+
+```
+    vagrant@vagrant:~$ sudo modprobe -v dummy
+         insmod /lib/modules/5.4.0-135-generic/kernel/drivers/net/dummy.ko numdummies=0
+    vagrant@vagrant:~$ lsmod | grep dummy
+         dummy                  16384  0
+    vagrant@vagrant:~$ ifconfig -a | grep dummy
+    vagrant@vagrant:~$ sudo ip link add dummy2 type dummy
+    vagrant@vagrant:~$ sudo ip addr add 192.168.10.100/24 dev dummy2
+    vagrant@vagrant:~$ sudo ip link set dummy2 up
+    vagrant@vagrant:~$ ip route
+         default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100
+         10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15
+         10.0.2.2 dev eth0 proto dhcp scope link src 10.0.2.15 metric 100
+         192.168.10.0/24 dev dummy2 proto kernel scope link src 192.168.10.100
+         192.168.33.0/24 dev eth1 proto kernel scope link src 192.168.33.10
+    vagrant@vagrant:~$ sudo ip addr add 10.0.0.100/24 dev dummy2
+    vagrant@vagrant:~$ sudo ip link set dummy2 up
+    vagrant@vagrant:~$ sudo ip route add to 10.10.0.0/16 via 10.0.0.100
+    vagrant@vagrant:~$ sudo ip route add to 10.100.0.0/16 via 10.0.0.100
+    vagrant@vagrant:~$ ip route
+         default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100
+         10.0.0.0/24 dev dummy2 proto kernel scope link src 10.0.0.100
+         10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15
+         10.0.2.2 dev eth0 proto dhcp scope link src 10.0.2.15 metric 100
+         10.10.0.0/16 via 10.0.0.100 dev dummy2
+         10.100.0.0/16 via 10.0.0.100 dev dummy2
+         192.168.10.0/24 dev dummy2 proto kernel scope link src 192.168.10.100
+         192.168.33.0/24 dev eth1 proto kernel scope link src 192.168.33.10
+    ```
+
 3. Проверьте открытые TCP-порты в Ubuntu. Какие протоколы и приложения используют эти порты? Приведите несколько примеров.
 
 4. Проверьте используемые UDP-сокеты в Ubuntu. Какие протоколы и приложения используют эти порты?
@@ -118,22 +150,6 @@ show bgp x.x.x.x/32
 
  ---
  
-## Задание со звёздочкой* 
-
-Это самостоятельное задание, его выполнение необязательно.
-
-6. Установите Nginx, настройте в режиме балансировщика TCP или UDP.
-
-7. Установите bird2, настройте динамический протокол маршрутизации RIP.
-
-8. Установите Netbox, создайте несколько IP-префиксов, и, используя curl, проверьте работу API.
-
-----
-
-### Правила приёма домашнего задания
-
-В личном кабинете отправлена ссылка на .md-файл в вашем репозитории.
-
 -----
 
 ### Критерии оценки
