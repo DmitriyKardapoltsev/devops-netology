@@ -142,8 +142,15 @@ show bgp x.x.x.x/32
 
 3. Проверьте открытые TCP-порты в Ubuntu. Какие протоколы и приложения используют эти порты? Приведите несколько примеров.
 
-***Ответ:***
-
+```
+vagrant@vagrant:~$ sudo ss -ntlp
+State      Recv-Q     Send-Q     Local Address:Port     Peer Address:Port     Process
+LISTEN     0          4096       127.0.0.53%lo:53       0.0.0.0:*             users:(("systemd-resolve",pid=606,fd=13))
+LISTEN     0          128        0.0.0.0:22             0.0.0.0:*             users:(("sshd",pid=747,fd=3))
+LISTEN     0          511        *:443                  *:*                   users:(("apache2",pid=885,fd=6),("apache2",pid=884,fd=6),("apache2",pid=650,fd=6))
+LISTEN     0          511        *:80                   *:*                   users:(("apache2",pid=885,fd=4),("apache2",pid=884,fd=4),("apache2",pid=650,fd=4))
+LISTEN     0          128        [::]:22                [::]:*                users:(("sshd",pid=747,fd=4))
+```
 
 4. Проверьте используемые UDP-сокеты в Ubuntu. Какие протоколы и приложения используют эти порты?
 
