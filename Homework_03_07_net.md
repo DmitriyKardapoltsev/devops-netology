@@ -160,18 +160,22 @@ vagrant@vagrant:~$ ipcalc -b 10.10.10.8/29
 
 ```
 # Проверить ARP-таблицу
-
+      vagrant@vagrant:~$ ip neighbour
+      vagrant@vagrant:~$ arp -n
 # Очистить ARP-кэш
-
+      vagrant@vagrant:~$ sudo ip neigh flush all
 # Удаление из ARP-таблицы только выбранного IP
+      vagrant@vagrant:~$ sudo arp -d <IP>
 ```
+
 * Для Windows
 
 ```
 # Проверить ARP-таблицу
-
+      PS C:\WINDOWS\system32> arp -a
 # Очистить ARP-кэш
-
+      PS C:\WINDOWS\system32> netsh interface ip delete arpcache
 # Удаление из ARP-таблицы только выбранного IP
+      PS C:\WINDOWS\system32> arp -d <IP>
 ```
 
