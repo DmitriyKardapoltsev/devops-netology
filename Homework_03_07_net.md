@@ -69,6 +69,11 @@
                IPv4-адрес. . . . . . . . . . . . : 172.17.64.1
                Маска подсети . . . . . . . . . . : 255.255.240.0
                Основной шлюз. . . . . . . . . :
+# Для Linux
+      vagrant@vagrant:~$ ip -br link show
+            lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
+            eth0             UP             08:00:27:59:cb:31 <BROADCAST,MULTICAST,UP,LOWER_UP>
+            eth1             UP             08:00:27:5c:65:9a <BROADCAST,MULTICAST,UP,LOWER_UP>
 ```
 
 2. Какой протокол используется для распознавания соседа по сетевому интерфейсу? Какой пакет и команды есть в Linux для этого?
