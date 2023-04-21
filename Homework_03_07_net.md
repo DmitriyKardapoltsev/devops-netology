@@ -107,7 +107,7 @@ vagrant@vagrant:~$ sudo ip addr add 192.168.1.200/24 brd 192.168.1.255 dev eth1.
 vagrant@vagrant:~$ sudo ip link set dev eth1.10 up
 ```
 
-~~4. Какие типы агрегации интерфейсов есть в Linux? Какие опции есть для балансировки нагрузки? Приведите пример конфига.~~
+4. Какие типы агрегации интерфейсов есть в Linux? Какие опции есть для балансировки нагрузки? Приведите пример конфига.
 
 ***Ответ:***
 
@@ -134,6 +134,25 @@ vagrant@vagrant:~$ sudo ip link set dev eth1.10 up
 **mode=6** (balance-alb)
 Адаптивное распределение нагрузки. Аналогично предыдущему режиму, но с возможностью балансировать также входящую нагрузку.
 
+* Пример настройки интерфейсов `eth0` и `eth1` в режиме `active-backup` в файле `«/etc/network/interfaces»`:
+
+```
+auto bond0
+iface bond0 inet dhcp
+   bond-slaves none
+   bond-mode active-backup
+   bond-miimon 100
+
+auto eth0
+   iface eth0 inet manual
+   bond-master bond0
+   bond-primary eth0 eth1
+
+auto eth1
+iface eth1 inet manual
+   bond-master bond0
+   bond-primary eth0 eth1
+```
 
 5. Сколько IP-адресов в сети с маской /29 ? Сколько /29 подсетей можно получить из сети с маской /24. Приведите несколько примеров /29 подсетей внутри сети 10.10.10.0/24.
 
