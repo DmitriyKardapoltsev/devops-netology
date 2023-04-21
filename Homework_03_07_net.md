@@ -95,6 +95,17 @@ vagrant@vagrant:~$ lldpctl
 ***Ответ:***
 
 * Технология `VLAN` - виртуальная локальная сеть (Virtual LAN)
+* Пакет для Ubuntu `vlan`
+
+```
+      vagrant@vagrant:~$ sudo ip link add link eth1 name eth1.10 type vlan id 10
+      vagrant@vagrant:~$ sudo ip -d link show eth1.10
+            5: eth1.10@eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+                link/ether 08:00:27:5c:65:9a brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 0 maxmtu 65535
+                vlan protocol 802.1Q id 10 <REORDER_HDR> addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+      vagrant@vagrant:~$ sudo ip addr add 192.168.1.200/24 brd 192.168.1.255 dev eth1.10
+      vagrant@vagrant:~$ sudo ip link set dev eth1.10 up
+```
 
 4. Какие типы агрегации интерфейсов есть в Linux? Какие опции есть для балансировки нагрузки? Приведите пример конфига.
 
