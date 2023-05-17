@@ -65,7 +65,18 @@ done
 ### Ваш скрипт:
 
 ```bash
-???
+#!/usr/bin/env bash
+declare -i test_IP=1
+while (($test_IP<=5))
+do
+  for IP in 192.168.0.1 173.194.222.113 87.250.250.242; 
+  do
+    nc -zw1 $IP 80
+    echo $? $IP `date` >> nc_test_IP.log
+  done
+test_IP+=1
+sleep 1
+done
 ```
 
 ---
@@ -76,7 +87,23 @@ done
 ### Ваш скрипт:
 
 ```bash
-???
+#!/usr/bin/env bash
+declare -i test_IP=1
+while (($test_IP==1))
+do
+  for IP in 192.168.0.1 173.194.222.113 87.250.250.242; 
+  do
+    nc -zw1 $IP 80
+    if (($?!=0))
+    then
+      echo $? $IP `date` >> error.log
+      exit 0
+    else
+      echo $? $IP `date` >> nc_test_IP.log
+    fi
+  done
+sleep 1
+done
 ```
 
 ---
