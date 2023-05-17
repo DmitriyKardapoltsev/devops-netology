@@ -49,7 +49,7 @@ do
 	curl https://localhost:4757
 	if (($? != 0))
 	then
-		date >> curl.log
+		date > curl.log	# изменено условие записи файла, каждый цикл записываем измения, а не дополняем 
 	else 			# добавлено условие выхода
 		break
 	fi
