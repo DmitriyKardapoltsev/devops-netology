@@ -45,14 +45,14 @@ done
 
 ```bash
 # отсутствовала вторая скобка
-while ((1==1))
+while ((1==1)) 					# отсутствовала вторая скобка
 do
 	curl https://localhost:4757
 	if (($? != 0))
 	then
 		date >> curl.log
 # добавлено условие выхода
-	else 
+	else 					# добавлено условие выхода
 		break
 	fi
 done
