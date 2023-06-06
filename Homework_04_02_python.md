@@ -76,14 +76,31 @@ dkard@DKard:~/devops-netology$ python3 homework_423.py
 
 ### Ваш скрипт:
 
-```python
-???
+```
+#!/usr/bin/env python3
+import os
+import sys
+path=os.getcwd()
+if len(sys.argv)!=1:
+    path=sys.argv[1]
+    bash_command = [f'cd {path}', 'git status 2>&1']
+    result_os = os.popen(' && '.join(bash_command)).read()
+    for result in result_os.split('\n'):
+        if result.find('fatal') != -1:
+            print('There is no GIT repository on the entered path')
+        if result.find('modified') != -1:
+            prepare_result = result.replace('\tmodified:      ', '')
+            print(os.getcwd() ,'/' , prepare_result, sep='')
 ```
 
 ### Вывод скрипта при запуске во время тестирования:
 
 ```
-???
+dkard@DKard:~/devops-netology$ python3 homework_424.py /home/dkard/devops-netology
+/home/dkard/devops-netology/    modified:   ANSWER.md
+/home/dkard/devops-netology/    modified:   README.md
+dkard@DKard:~/devops-netology$ python3 homework_424.py /home
+There is no GIT repository on the entered path
 ```
 
 ------
