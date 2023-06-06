@@ -30,6 +30,7 @@ c = a + b
 Как можно доработать скрипт ниже, чтобы он исполнял требования вашего руководителя?
 
 ```python
+
 #!/usr/bin/env python3
 
 import os
@@ -42,11 +43,12 @@ for result in result_os.split('\n'):
         prepare_result = result.replace('\tmodified:   ', '')
         print(prepare_result)
         break
+
 ```
 
 ### Ваш скрипт:
 
-```
+```python
 #!/usr/bin/env python3
 import os
 bash_command = ["cd ~/devops-netology", "git status"]
@@ -62,7 +64,7 @@ for result in result_os.split('\n'):
 
 ### Вывод скрипта при запуске во время тестирования:
 
-```
+```vim
 dkard@DKard:~/devops-netology$ python3 homework_423.py
 /home/dkard/devops-netology/    modified:   ANSWER.md
 /home/dkard/devops-netology/    modified:   README.md
@@ -76,7 +78,7 @@ dkard@DKard:~/devops-netology$ python3 homework_423.py
 
 ### Ваш скрипт:
 
-```
+```python
 #!/usr/bin/env python3
 import os
 import sys
@@ -95,7 +97,7 @@ if len(sys.argv)!=1:
 
 ### Вывод скрипта при запуске во время тестирования:
 
-```
+```vim
 dkard@DKard:~/devops-netology$ python3 homework_424.py /home/dkard/devops-netology
 /home/dkard/devops-netology/    modified:   ANSWER.md
 /home/dkard/devops-netology/    modified:   README.md
