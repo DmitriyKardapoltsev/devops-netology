@@ -46,14 +46,26 @@ for result in result_os.split('\n'):
 
 ### Ваш скрипт:
 
-```python
-???
+```
+#!/usr/bin/env python3
+import os
+bash_command = ["cd ~/devops-netology", "git status"]
+result_os = os.popen(' && '.join(bash_command)).read()
+#is_change = False - исключена ненужная переменная
+for result in result_os.split('\n'):
+    if result.find('modified') != -1:
+        prepare_result = result.replace('\tmodified:      ', '')
+        #добавлена функция, которая возвращает текущий каталог
+        print(os.getcwd() ,'/' , prepare_result, sep='')
+        #break - исключено прерывание после первого успешного найденного значения
 ```
 
 ### Вывод скрипта при запуске во время тестирования:
 
 ```
-???
+dkard@DKard:~/devops-netology$ python3 homework_423.py
+/home/dkard/devops-netology/    modified:   ANSWER.md
+/home/dkard/devops-netology/    modified:   README.md
 ```
 
 ------
