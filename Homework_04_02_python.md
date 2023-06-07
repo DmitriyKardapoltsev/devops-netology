@@ -124,11 +124,34 @@ There is no GIT repository on the entered path
 ### Ваш скрипт:
 
 ```python
-???
+#!/usr/bin/env python3
+import socket
+hosts = {'drive.google.com':'192.168.0.0', 'mail.google.com':'192.168.0.1', 'google.com':'192.168.0.2'}
+while 1 == 1 :
+    for host in hosts :
+        ip = socket.gethostbyname(host)
+        if ip != hosts[host] :
+            print(' [ERROR] ' + str(host) +' IP mistmatch: '+hosts[host]+' '+ip)
+            hosts[host]=ip
+        else :
+            print(str(host) + ' ' + ip)
 ```
 
 ### Вывод скрипта при запуске во время тестирования:
 
-```
-???
+```vim
+dkard@DKard:~/devops-netology$ python3 homework_425.py
+ [ERROR] drive.google.com IP mistmatch: 192.168.0.0 64.233.164.194
+ [ERROR] mail.google.com IP mistmatch: 192.168.0.1 142.250.150.17
+ [ERROR] google.com IP mistmatch: 192.168.0.2 74.125.205.113
+drive.google.com 64.233.164.194
+mail.google.com 142.250.150.17
+google.com 74.125.205.113
+drive.google.com 64.233.164.194
+mail.google.com 142.250.150.17
+google.com 74.125.205.113
+drive.google.com 64.233.164.194
+mail.google.com 142.250.150.17
+google.com 74.125.205.113
+...
 ```
