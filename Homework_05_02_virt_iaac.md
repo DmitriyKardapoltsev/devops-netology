@@ -41,8 +41,19 @@
 Установите на личный компьютер:
 
 - [VirtualBox](https://www.virtualbox.org/),
+
 - [Vagrant](https://github.com/netology-code/devops-materials),
+```
+PS C:\vagrant2> vagrant --version
+Vagrant 2.3.4
+```
 - [Terraform](https://github.com/netology-code/devops-materials/blob/master/README.md),
+```
+PS C:\WINDOWS\system32> terraform -version
+Terraform v1.5.0
+on windows_386
+```
+
 - Ansible.
 
 *Приложите вывод команд установленных версий каждой из программ, оформленный в Markdown.*
